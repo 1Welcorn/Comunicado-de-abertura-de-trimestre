@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="data:,">
   <title>Língua Inglesa – 7º Ano | AV.1 e REC. AV.1</title>
+
   <style>
     body {
       margin: 0;
@@ -116,25 +118,46 @@
       font-weight: bold;
     }
 
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 8px;
+      cursor: pointer;
+      margin-left: 6px;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
     .footer {
       text-align: center;
       color: #6b7280;
       font-size: 0.95rem;
       margin-top: 24px;
+      padding-bottom: 24px;
     }
 
     @media print {
       body {
         background: white;
       }
-      section, header {
+
+      section,
+      header {
         box-shadow: none;
       }
     }
   </style>
 </head>
+
 <body>
+
   <div class="container">
+
     <header>
       <h1>🎧 English Through Music & Media</h1>
       <p>Landing Page do 2º Trimestre – Língua Inglesa | 7º Ano</p>
@@ -143,18 +166,21 @@
 
     <section>
       <h2>Welcome, students!</h2>
+
       <p>
-        Neste trimestre, vamos aprender inglês de uma forma mais comunicativa, criativa e conectada com o mundo real.
-        Vamos usar músicas, vídeos, memes, entrevistas, textos digitais, jogos e atividades colaborativas.
+        Neste trimestre, vamos aprender inglês de forma mais comunicativa,
+        criativa e conectada com o mundo real.
       </p>
+
       <div class="highlight">
-        Você não precisa falar inglês perfeito. Você precisa participar, tentar, repetir, criar e evoluir.
+        Você não precisa falar inglês perfeito.
+        Você precisa participar, tentar, repetir, criar e evoluir.
       </div>
     </section>
 
     <section>
       <h2>🎯 Nossa missão no 2º trimestre</h2>
-      <p>Durante esta etapa, nosso objetivo será usar o inglês para:</p>
+
       <div>
         <span class="tag">entender textos</span>
         <span class="tag">interpretar imagens</span>
@@ -166,71 +192,33 @@
     </section>
 
     <section>
-      <h2>O que vamos aprender</h2>
-      <div class="grid">
-        <div>
-          <h3>📖 Leitura e interpretação</h3>
-          <ul>
-            <li>Identificar informações principais em textos.</li>
-            <li>Descobrir o tema e a ideia principal.</li>
-            <li>Interpretar memes, imagens, vídeos e textos digitais.</li>
-            <li>Compreender palavras pelo contexto.</li>
-            <li>Reconhecer diferentes tipos de textos e suas finalidades.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>💬 Vocabulário e chunks</h3>
-          <ul>
-            <li>Palavras úteis para comunicação real.</li>
-            <li>Expressões prontas para falar com mais segurança.</li>
-            <li>Vocabulário de música, internet, escola, opiniões e cultura.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>🧠 Gramática em uso</h3>
-          <ul>
-            <li>Polissemia: palavras com mais de um significado.</li>
-            <li>Pronome objeto.</li>
-            <li>Organização de frases e pequenos textos.</li>
-            <li>Uso do inglês em situações reais e digitais.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>🎤 Oralidade</h3>
-          <ul>
-            <li>Participação em entrevistas e diálogos.</li>
-            <li>Compreensão de vídeos, músicas e áudios.</li>
-            <li>Pronúncia e repetição de expressões importantes.</li>
-            <li>Interação em pares e grupos.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <h2>🎵 Projeto Final</h2>
 
-    <section>
-      <h2>🎵 Projeto final</h2>
       <h3>English Through Music – The Lazy Song</h3>
+
       <p>
-        Nosso projeto final será uma produção musical colaborativa inspirada na música
-        <strong>“The Lazy Song”</strong>, de Bruno Mars.
+        Nosso projeto final será uma produção musical colaborativa inspirada
+        na música <strong>“The Lazy Song”</strong>, de Bruno Mars.
       </p>
-      <p>O projeto poderá incluir:</p>
+
       <div>
         <span class="tag">canto</span>
         <span class="tag">adaptação de trechos</span>
         <span class="tag">gravação de vídeo</span>
         <span class="tag">legendas</span>
-        <span class="tag">encenação</span>
+        <span class="tag">criatividade</span>
         <span class="tag">trabalho em equipe</span>
       </div>
+
       <div class="highlight">
-        O foco será participação, criatividade, colaboração e uso do vocabulário estudado — não perfeição.
+        O foco será participação, criatividade, colaboração
+        e uso do vocabulário estudado — não perfeição.
       </div>
     </section>
 
     <section>
       <h2>🔊 20 palavras prioritárias</h2>
-      <p>Clique no botão de áudio para ouvir a pronúncia em inglês.</p>
+
       <table>
         <thead>
           <tr>
@@ -238,6 +226,7 @@
             <th>Significado</th>
           </tr>
         </thead>
+
         <tbody>
           <tr><td>text <button onclick="speak('text')">🔊</button></td><td>texto</td></tr>
           <tr><td>idea <button onclick="speak('idea')">🔊</button></td><td>ideia</td></tr>
@@ -245,27 +234,17 @@
           <tr><td>question <button onclick="speak('question')">🔊</button></td><td>pergunta</td></tr>
           <tr><td>answer <button onclick="speak('answer')">🔊</button></td><td>resposta</td></tr>
           <tr><td>friend <button onclick="speak('friend')">🔊</button></td><td>amigo(a)</td></tr>
-          <tr><td>family <button onclick="speak('family')">🔊</button></td><td>família</td></tr>
           <tr><td>music <button onclick="speak('music')">🔊</button></td><td>música</td></tr>
           <tr><td>video <button onclick="speak('video')">🔊</button></td><td>vídeo</td></tr>
           <tr><td>internet <button onclick="speak('internet')">🔊</button></td><td>internet</td></tr>
-          <tr><td>game <button onclick="speak('game')">🔊</button></td><td>jogo</td></tr>
           <tr><td>school <button onclick="speak('school')">🔊</button></td><td>escola</td></tr>
-          <tr><td>people <button onclick="speak('people')">🔊</button></td><td>pessoas</td></tr>
-          <tr><td>world <button onclick="speak('world')">🔊</button></td><td>mundo</td></tr>
-          <tr><td>culture <button onclick="speak('culture')">🔊</button></td><td>cultura</td></tr>
-          <tr><td>different <button onclick="speak('different')">🔊</button></td><td>diferente</td></tr>
-          <tr><td>together <button onclick="speak('together')">🔊</button></td><td>juntos</td></tr>
-          <tr><td>favorite <button onclick="speak('favorite')">🔊</button></td><td>favorito(a)</td></tr>
-          <tr><td>opinion <button onclick="speak('opinion')">🔊</button></td><td>opinião</td></tr>
-          <tr><td>language <button onclick="speak('language')">🔊</button></td><td>língua / idioma</td></tr>
         </tbody>
       </table>
     </section>
 
     <section>
       <h2>🔊 20 chunks / expressões importantes</h2>
-      <p>Essas expressões ajudam você a falar inglês com mais segurança.</p>
+
       <table>
         <thead>
           <tr>
@@ -273,26 +252,17 @@
             <th>Significado</th>
           </tr>
         </thead>
+
         <tbody>
           <tr><td>I think… <button onclick="speak('I think')">🔊</button></td><td>Eu acho…</td></tr>
-          <tr><td>What about you? <button onclick="speak('What about you?')">🔊</button></td><td>E você?</td></tr>
+          <tr><td>What about you? <button onclick="speak('What about you')">🔊</button></td><td>E você?</td></tr>
           <tr><td>I agree. <button onclick="speak('I agree')">🔊</button></td><td>Eu concordo.</td></tr>
           <tr><td>I disagree. <button onclick="speak('I disagree')">🔊</button></td><td>Eu discordo.</td></tr>
-          <tr><td>The text is about… <button onclick="speak('The text is about')">🔊</button></td><td>O texto é sobre…</td></tr>
-          <tr><td>What does it mean? <button onclick="speak('What does it mean?')">🔊</button></td><td>O que significa?</td></tr>
-          <tr><td>Repeat, please. <button onclick="speak('Repeat, please')">🔊</button></td><td>Repita, por favor.</td></tr>
-          <tr><td>Can you help me? <button onclick="speak('Can you help me?')">🔊</button></td><td>Você pode me ajudar?</td></tr>
-          <tr><td>I don’t know. <button onclick="speak('I do not know')">🔊</button></td><td>Eu não sei.</td></tr>
-          <tr><td>I’m not sure. <button onclick="speak('I am not sure')">🔊</button></td><td>Eu não tenho certeza.</td></tr>
-          <tr><td>For example… <button onclick="speak('For example')">🔊</button></td><td>Por exemplo…</td></tr>
-          <tr><td>My favorite… is… <button onclick="speak('My favorite is')">🔊</button></td><td>Meu/minha favorito(a) é…</td></tr>
-          <tr><td>Let’s do it together. <button onclick="speak('Let us do it together')">🔊</button></td><td>Vamos fazer juntos.</td></tr>
+          <tr><td>Can you help me? <button onclick="speak('Can you help me')">🔊</button></td><td>Você pode me ajudar?</td></tr>
+          <tr><td>I don't know. <button onclick="speak('I do not know')">🔊</button></td><td>Eu não sei.</td></tr>
+          <tr><td>Repeat, please. <button onclick="speak('Repeat please')">🔊</button></td><td>Repita, por favor.</td></tr>
           <tr><td>I like… <button onclick="speak('I like')">🔊</button></td><td>Eu gosto de…</td></tr>
-          <tr><td>I don’t like… <button onclick="speak('I do not like')">🔊</button></td><td>Eu não gosto de…</td></tr>
-          <tr><td>Today I feel like… <button onclick="speak('Today I feel like')">🔊</button></td><td>Hoje eu estou com vontade de…</td></tr>
-          <tr><td>I just wanna… <button onclick="speak('I just wanna')">🔊</button></td><td>Eu só quero…</td></tr>
-          <tr><td>The main idea is… <button onclick="speak('The main idea is')">🔊</button></td><td>A ideia principal é…</td></tr>
-          <tr><td>In my opinion… <button onclick="speak('In my opinion')">🔊</button></td><td>Na minha opinião…</td></tr>
+          <tr><td>I don't like… <button onclick="speak('I do not like')">🔊</button></td><td>Eu não gosto de…</td></tr>
           <tr><td>Very good! <button onclick="speak('Very good')">🔊</button></td><td>Muito bom!</td></tr>
         </tbody>
       </table>
@@ -300,61 +270,57 @@
 
     <section>
       <h2>📝 Como estudar para a AV.1 e REC. AV.1</h2>
-      <ul>
-        <li>Revise as 20 palavras prioritárias.</li>
-        <li>Revise os 20 chunks do trimestre.</li>
-        <li>Leia os textos e atividades do caderno.</li>
-        <li>Pratique a interpretação de imagens, memes e pequenos textos.</li>
-        <li>Revise polissemia e pronomes objeto.</li>
-        <li>Observe os exemplos trabalhados nos slides.</li>
-        <li>Utilize a plataforma <strong>Inglês Paraná Teens</strong> para revisar conteúdos.</li>
-      </ul>
-    </section>
 
-    <section>
-      <h2>📌 O que pode aparecer na avaliação</h2>
       <ul>
-        <li>Interpretação de textos curtos.</li>
-        <li>Análise de imagens e gêneros digitais.</li>
-        <li>Compreensão de palavras pelo contexto.</li>
-        <li>Identificação do tema principal.</li>
-        <li>Uso de pronomes.</li>
-        <li>Vocabulário do trimestre.</li>
-        <li>Compreensão de músicas e expressões.</li>
-        <li>Pequenos diálogos e situações comunicativas.</li>
+        <li>Revise as palavras e chunks do trimestre.</li>
+        <li>Leia os textos e atividades do caderno.</li>
+        <li>Pratique interpretação de imagens, memes e pequenos textos.</li>
+        <li>Revise polissemia e pronomes objeto.</li>
+        <li>Use a plataforma <strong>Inglês Paraná Teens</strong>.</li>
       </ul>
     </section>
 
     <section>
       <h2>⭐ Dicas importantes</h2>
+
       <ul>
-        <li><strong>Não tenha medo de errar.</strong> Aprender inglês é um processo.</li>
-        <li><strong>Participe das aulas.</strong> Quanto mais você participa, mais aprende.</li>
-        <li><strong>Use o inglês aos poucos.</strong> Mesmo frases simples ajudam muito.</li>
-        <li><strong>Preste atenção nas expressões repetidas nas aulas e músicas.</strong></li>
-        <li><strong>Revise sempre um pouco.</strong> Pequenas revisões ajudam mais do que estudar tudo de uma vez.</li>
+        <li><strong>Não tenha medo de errar.</strong></li>
+        <li><strong>Participe das aulas.</strong></li>
+        <li><strong>Use o inglês aos poucos.</strong></li>
+        <li><strong>Pratique os chunks frequentemente.</strong></li>
       </ul>
+
       <div class="highlight">
-        Good luck and let’s learn English together! <button onclick="speak('Good luck and let us learn English together')">🔊</button>
+        Good luck and let’s learn English together!
+        <button onclick="speak('Good luck and let us learn English together')">🔊</button>
       </div>
     </section>
 
-    <p class="footer">Língua Inglesa – 7º Ano | 2º Trimestre – 2026</p>
+    <p class="footer">
+      Língua Inglesa – 7º Ano | 2º Trimestre – 2026
+    </p>
+
   </div>
 
   <script>
     function speak(text) {
       if (!('speechSynthesis' in window)) {
-        alert('Seu navegador não suporta áudio automático de fala.');
+        alert('Seu navegador não suporta áudio automático.');
         return;
       }
+
       window.speechSynthesis.cancel();
+
       const utterance = new SpeechSynthesisUtterance(text);
+
       utterance.lang = 'en-US';
       utterance.rate = 0.85;
       utterance.pitch = 1;
+
       window.speechSynthesis.speak(utterance);
     }
   </script>
+
 </body>
+
 </html>
