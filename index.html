@@ -1,60 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="data:,">
-  <title>Língua Inglesa – 7º Ano | AV.1 e REC. AV.1</title>
-
+  <title>English Through Music & Media – 7º Ano</title>
   <style>
+    :root {
+      --pink: #ec4899;
+      --purple: #7c3aed;
+      --blue: #2563eb;
+      --cyan: #06b6d4;
+      --yellow: #facc15;
+      --orange: #f97316;
+      --green: #22c55e;
+      --ink: #172033;
+      --muted: #64748b;
+      --card: #ffffff;
+      --soft: #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
+      background:
+        radial-gradient(circle at top left, rgba(236, 72, 153, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 30%),
+        linear-gradient(180deg, #fdf2f8, #f8fafc 45%, #eef2ff);
+      color: var(--ink);
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 960px;
+    .page {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 28px 18px 50px;
     }
 
-    header {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+    .hero {
+      background: linear-gradient(135deg, #831843, #7c3aed 52%, #2563eb);
       color: white;
-      padding: 36px 24px;
-      border-radius: 20px;
-      text-align: center;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-radius: 28px;
+      padding: 42px 32px;
+      box-shadow: 0 22px 55px rgba(131, 24, 67, 0.28);
+      position: relative;
+      overflow: hidden;
     }
 
-    header h1 {
+    .hero::after {
+      content: "♫";
+      position: absolute;
+      right: 36px;
+      top: 18px;
+      font-size: 150px;
+      opacity: 0.13;
+      font-weight: bold;
+    }
+
+    .hero h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      position: relative;
+      z-index: 1;
     }
 
-    header p {
-      margin: 8px 0 0;
-      font-size: 1.1rem;
+    .hero .subtitle {
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 2.5vw, 1.45rem);
+      max-width: 820px;
+      opacity: 0.96;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .meta {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 22px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     section {
-      background: white;
-      padding: 24px;
-      border-radius: 18px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      background: var(--card);
+      margin-top: 22px;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.25);
     }
 
     h2 {
-      color: #2563eb;
-      margin-top: 0;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
+      margin: 0 0 16px;
+      color: #831843;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     h3 {
@@ -62,265 +113,440 @@
       margin-bottom: 8px;
     }
 
-    ul {
-      padding-left: 22px;
+    .lead {
+      font-size: 1.08rem;
+      color: #334155;
+      margin-top: 0;
     }
 
-    li {
-      margin-bottom: 6px;
+    .mission {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
     }
 
-    .highlight {
-      background: #eef2ff;
-      border-left: 5px solid #4f46e5;
-      padding: 16px;
-      border-radius: 12px;
-      margin-top: 12px;
+    .pill {
+      background: #fdf2f8;
+      color: #9d174d;
+      border: 1px solid #fbcfe8;
+      border-radius: 18px;
+      padding: 14px;
+      text-align: center;
+      font-weight: 700;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 18px;
     }
+
+    .card {
+      background: var(--soft);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #e2e8f0;
+    }
+
+    ul { margin: 10px 0 0; padding-left: 22px; }
+    li { margin-bottom: 7px; }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
-      font-size: 0.95rem;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-top: 16px;
+      background: white;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+      vertical-align: top;
     }
 
     th {
-      background: #2563eb;
-      color: white;
-      text-align: left;
-      padding: 10px;
+      background: #fce7f3;
+      color: #831843;
     }
 
-    td {
-      border: 1px solid #e5e7eb;
-      padding: 10px;
+    tr:last-child td { border-bottom: none; }
+
+    .project {
+      background: linear-gradient(135deg, #fdf2f8, #eef2ff);
+      border: 2px solid #fbcfe8;
     }
 
-    tr:nth-child(even) {
-      background: #f9fafb;
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin-top: 18px;
     }
 
-    .tag {
-      display: inline-block;
-      background: #dbeafe;
-      color: #1e40af;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      margin: 4px;
-      font-weight: bold;
+    .word {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #fbcfe8;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
     }
 
-    button {
+    .word strong { color: #be185d; }
+
+    button.audio {
       border: none;
-      background: #2563eb;
+      background: #ec4899;
       color: white;
-      border-radius: 8px;
-      padding: 4px 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
       cursor: pointer;
-      margin-left: 6px;
-      transition: 0.2s;
+      font-size: 15px;
+      flex-shrink: 0;
     }
 
-    button:hover {
-      background: #1d4ed8;
+    button.audio:hover { background: #be185d; }
+
+    .tips {
+      background: linear-gradient(135deg, #fef9c3, #ffedd5);
+      border: 1px solid #fde68a;
     }
 
     .footer {
       text-align: center;
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-top: 24px;
-      padding-bottom: 24px;
+      color: #475569;
+      padding: 28px 10px 0;
+      font-weight: 700;
     }
 
-    @media print {
-      body {
-        background: white;
-      }
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #ede9fe;
+      color: #5b21b6;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-      section,
-      header {
-        box-shadow: none;
-      }
+    @media (max-width: 620px) {
+      .hero, section { border-radius: 20px; padding: 24px; }
+      th, td { font-size: 0.92rem; padding: 10px; }
     }
   </style>
 </head>
-
 <body>
-
-  <div class="container">
-
-    <header>
-      <h1>🎧 English Through Music & Media</h1>
-      <p>Landing Page do 2º Trimestre – Língua Inglesa | 7º Ano</p>
-      <p>AV.1 • REC. AV.1 • Projeto Final</p>
+  <main class="page">
+    <header class="hero">
+      <h1>English Through Music & Media</h1>
+      <p class="subtitle">Reading, speaking, vocabulary, digital texts and music-based communication</p>
+      <div class="meta">7º Ano | 2º Trimestre – 2026</div>
     </header>
 
     <section>
-      <h2>Welcome, students!</h2>
-
-      <p>
-        Neste trimestre, vamos aprender inglês de forma mais comunicativa,
-        criativa e conectada com o mundo real.
+      <h2>👋 Welcome, students!</h2>
+      <p class="lead">
+        Neste trimestre, vamos aprender inglês de forma mais comunicativa, criativa e conectada com o mundo real.
       </p>
-
-      <div class="highlight">
-        Você não precisa falar inglês perfeito.
-        Você precisa participar, tentar, repetir, criar e evoluir.
-      </div>
+      <p>
+        Você não precisa falar inglês perfeito. Você precisa participar, tentar, repetir, criar e evoluir. Vamos usar textos, imagens, músicas, vídeos, entrevistas, atividades em grupo e a plataforma Inglês Paraná High para desenvolver nossa comunicação.
+      </p>
     </section>
 
     <section>
       <h2>🎯 Nossa missão no 2º trimestre</h2>
-
-      <div>
-        <span class="tag">entender textos</span>
-        <span class="tag">interpretar imagens</span>
-        <span class="tag">participar de entrevistas</span>
-        <span class="tag">falar com mais confiança</span>
-        <span class="tag">aprender com música</span>
-        <span class="tag">criar em grupo</span>
+      <p>Durante esta etapa, vamos usar o inglês para:</p>
+      <div class="mission">
+        <div class="pill">entender textos</div>
+        <div class="pill">interpretar imagens</div>
+        <div class="pill">participar de entrevistas</div>
+        <div class="pill">falar com confiança</div>
+        <div class="pill">aprender com música</div>
+        <div class="pill">criar em grupo</div>
       </div>
     </section>
 
     <section>
-      <h2>🎵 Projeto Final</h2>
+      <h2>📚 O que vamos aprender</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Reading</span>
+          <ul>
+            <li>Informações-chave do texto.</li>
+            <li>Assunto e ideia principal.</li>
+            <li>Gêneros digitais.</li>
+            <li>Finalidade de textos.</li>
+            <li>Textos com imagens e recursos visuais.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Language</span>
+          <ul>
+            <li>Polissemia.</li>
+            <li>Pronomes objeto.</li>
+            <li>Palavras cognatas.</li>
+            <li>Vocabulário em contexto.</li>
+            <li>Chunks comunicativos.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Speaking</span>
+          <ul>
+            <li>Entrevistas simples.</li>
+            <li>Perguntas e respostas.</li>
+            <li>Interação em pares e grupos.</li>
+            <li>Apresentações curtas.</li>
+            <li>Pronúncia e ritmo com música.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Culture & Media</span>
+          <ul>
+            <li>A língua inglesa no mundo globalizado.</li>
+            <li>Música e cultura.</li>
+            <li>Vídeos e mídias digitais.</li>
+            <li>Uso responsável de recursos digitais.</li>
+            <li>Expressão criativa em inglês.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <h3>English Through Music – The Lazy Song</h3>
+    <section>
+      <h2>🧭 Descritores trabalhados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descritor</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>D02</strong></td><td>Estabelecer relações entre partes de um texto, identificando repetições ou substituições que contribuem para a continuidade textual.</td></tr>
+          <tr><td><strong>D04</strong></td><td>Inferir uma informação implícita em um texto.</td></tr>
+          <tr><td><strong>D05</strong></td><td>Interpretar texto com auxílio de material gráfico diverso, como propagandas, quadrinhos, fotos e imagens.</td></tr>
+          <tr><td><strong>D06</strong></td><td>Identificar o tema de um texto.</td></tr>
+          <tr><td><strong>D12</strong></td><td>Identificar a finalidade de textos de diferentes gêneros.</td></tr>
+          <tr><td><strong>D15</strong></td><td>Estabelecer relações lógico-discursivas presentes no texto, marcadas por conjunções, advérbios etc.</td></tr>
+          <tr><td><strong>D18</strong></td><td>Reconhecer o efeito de sentido decorrente da escolha de uma determinada palavra ou expressão.</td></tr>
+          <tr><td><strong>D19</strong></td><td>Reconhecer o efeito de sentido decorrente da exploração de recursos ortográficos e/ou morfossintáticos.</td></tr>
+        </tbody>
+      </table>
+    </section>
 
+    <section>
+      <h2>📝 Como será a avaliação</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Valor</th>
+            <th>Foco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Avaliação escrita</td><td><strong>4,0</strong></td><td>Interpretação, descritores, vocabulário, polissemia, pronomes objeto, gêneros digitais e leitura crítica.</td></tr>
+          <tr><td>Plataforma Inglês Paraná High</td><td><strong>2,0</strong></td><td>Prática contínua, autonomia, vocabulary, listening, speaking e contato frequente com o inglês.</td></tr>
+          <tr><td>Simulado / Prova Paraná</td><td><strong>2,0</strong></td><td>Descritores, leitura, interpretação, análise de gêneros e resolução de questões no modelo da Prova Paraná.</td></tr>
+          <tr><td>The Lazy Song Project</td><td><strong>2,0</strong></td><td>Música, oralidade, criatividade, pronúncia, colaboração, apresentação e uso funcional da língua inglesa.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="project">
+      <h2>🎵 Trabalho do trimestre</h2>
+      <h3>English Through Music – The Lazy Song Project</h3>
       <p>
-        Nosso projeto final será uma produção musical colaborativa inspirada
-        na música <strong>“The Lazy Song”</strong>, de Bruno Mars.
+        Neste trimestre, nosso trabalho final será uma produção colaborativa inspirada na música <strong>“The Lazy Song”</strong>, de Bruno Mars.
+      </p>
+      <p>
+        A atividade vai ajudar a desenvolver listening, speaking, vocabulário, ritmo, pronúncia, criatividade, colaboração e confiança para usar o inglês em uma situação divertida e significativa.
       </p>
 
-      <div>
-        <span class="tag">canto</span>
-        <span class="tag">adaptação de trechos</span>
-        <span class="tag">gravação de vídeo</span>
-        <span class="tag">legendas</span>
-        <span class="tag">criatividade</span>
-        <span class="tag">trabalho em equipe</span>
+      <p>Os grupos poderão apresentar:</p>
+      <div class="mission">
+        <div class="pill">performance musical</div>
+        <div class="pill">lip sync</div>
+        <div class="pill">dramatização</div>
+        <div class="pill">vídeo criativo</div>
+        <div class="pill">coreografia</div>
+        <div class="pill">cartaz temático</div>
       </div>
 
-      <div class="highlight">
-        O foco será participação, criatividade, colaboração
-        e uso do vocabulário estudado — não perfeição.
-      </div>
+      <p>
+        O foco será participação, criatividade, colaboração e uso do vocabulário estudado — não perfeição.
+      </p>
+
+      <h3>📋 Critérios de avaliação</h3>
+      <p>
+        A atividade terá valor total de <strong>2,0 pontos</strong>. Cada rubrica valerá <strong>0,5 ponto</strong>.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rubrica</th>
+            <th>Valor</th>
+            <th>O que será observado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Oralidade e pronúncia</strong></td>
+            <td><strong>0,5</strong></td>
+            <td>Clareza na fala ou canto, esforço comunicativo, pronúncia compreensível e participação oral.</td>
+          </tr>
+          <tr>
+            <td><strong>Uso da língua inglesa</strong></td>
+            <td><strong>0,5</strong></td>
+            <td>Uso de vocabulário da música, compreensão da letra, chunks estudados e participação em inglês.</td>
+          </tr>
+          <tr>
+            <td><strong>Criatividade e apresentação</strong></td>
+            <td><strong>0,5</strong></td>
+            <td>Criatividade, organização visual, performance, dramatização, expressão corporal e envolvimento com a atividade.</td>
+          </tr>
+          <tr>
+            <td><strong>Trabalho em equipe e participação</strong></td>
+            <td><strong>0,5</strong></td>
+            <td>Colaboração, comprometimento, divisão de tarefas, participação equilibrada e interação do grupo.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>🏆 Rubrica simplificada</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nível</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Excelente</strong></td>
+            <td>O grupo demonstrou excelente participação, criatividade, organização, uso do inglês e envolvimento na apresentação.</td>
+          </tr>
+          <tr>
+            <td><strong>Bom</strong></td>
+            <td>O grupo apresentou boa comunicação, organização e uso adequado do inglês na maior parte da atividade.</td>
+          </tr>
+          <tr>
+            <td><strong>Regular</strong></td>
+            <td>O grupo apresentou participação parcial, pouca variedade linguística ou necessidade frequente de apoio.</td>
+          </tr>
+          <tr>
+            <td><strong>Em desenvolvimento</strong></td>
+            <td>O grupo apresentou pouca participação, baixa organização ou uso muito limitado da língua inglesa.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section>
       <h2>🔊 20 palavras prioritárias</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Palavra</th>
-            <th>Significado</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr><td>text <button onclick="speak('text')">🔊</button></td><td>texto</td></tr>
-          <tr><td>idea <button onclick="speak('idea')">🔊</button></td><td>ideia</td></tr>
-          <tr><td>meaning <button onclick="speak('meaning')">🔊</button></td><td>significado</td></tr>
-          <tr><td>question <button onclick="speak('question')">🔊</button></td><td>pergunta</td></tr>
-          <tr><td>answer <button onclick="speak('answer')">🔊</button></td><td>resposta</td></tr>
-          <tr><td>friend <button onclick="speak('friend')">🔊</button></td><td>amigo(a)</td></tr>
-          <tr><td>music <button onclick="speak('music')">🔊</button></td><td>música</td></tr>
-          <tr><td>video <button onclick="speak('video')">🔊</button></td><td>vídeo</td></tr>
-          <tr><td>internet <button onclick="speak('internet')">🔊</button></td><td>internet</td></tr>
-          <tr><td>school <button onclick="speak('school')">🔊</button></td><td>escola</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>🔊 20 chunks / expressões importantes</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Chunk</th>
-            <th>Significado</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr><td>I think… <button onclick="speak('I think')">🔊</button></td><td>Eu acho…</td></tr>
-          <tr><td>What about you? <button onclick="speak('What about you')">🔊</button></td><td>E você?</td></tr>
-          <tr><td>I agree. <button onclick="speak('I agree')">🔊</button></td><td>Eu concordo.</td></tr>
-          <tr><td>I disagree. <button onclick="speak('I disagree')">🔊</button></td><td>Eu discordo.</td></tr>
-          <tr><td>Can you help me? <button onclick="speak('Can you help me')">🔊</button></td><td>Você pode me ajudar?</td></tr>
-          <tr><td>I don't know. <button onclick="speak('I do not know')">🔊</button></td><td>Eu não sei.</td></tr>
-          <tr><td>Repeat, please. <button onclick="speak('Repeat please')">🔊</button></td><td>Repita, por favor.</td></tr>
-          <tr><td>I like… <button onclick="speak('I like')">🔊</button></td><td>Eu gosto de…</td></tr>
-          <tr><td>I don't like… <button onclick="speak('I do not like')">🔊</button></td><td>Eu não gosto de…</td></tr>
-          <tr><td>Very good! <button onclick="speak('Very good')">🔊</button></td><td>Muito bom!</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>📝 Como estudar para a AV.1 e REC. AV.1</h2>
-
-      <ul>
-        <li>Revise as palavras e chunks do trimestre.</li>
-        <li>Leia os textos e atividades do caderno.</li>
-        <li>Pratique interpretação de imagens, memes e pequenos textos.</li>
-        <li>Revise polissemia e pronomes objeto.</li>
-        <li>Use a plataforma <strong>Inglês Paraná Teens</strong>.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>⭐ Dicas importantes</h2>
-
-      <ul>
-        <li><strong>Não tenha medo de errar.</strong></li>
-        <li><strong>Participe das aulas.</strong></li>
-        <li><strong>Use o inglês aos poucos.</strong></li>
-        <li><strong>Pratique os chunks frequentemente.</strong></li>
-      </ul>
-
-      <div class="highlight">
-        Good luck and let’s learn English together!
-        <button onclick="speak('Good luck and let us learn English together')">🔊</button>
+      <p>Clique no botão de áudio para ouvir a pronúncia em inglês.</p>
+      <div class="vocab-grid">
+        <div class="word"><span><strong>text</strong><br>texto</span><button class="audio" onclick="speak('text')">▶</button></div>
+        <div class="word"><span><strong>idea</strong><br>ideia</span><button class="audio" onclick="speak('idea')">▶</button></div>
+        <div class="word"><span><strong>meaning</strong><br>significado</span><button class="audio" onclick="speak('meaning')">▶</button></div>
+        <div class="word"><span><strong>question</strong><br>pergunta</span><button class="audio" onclick="speak('question')">▶</button></div>
+        <div class="word"><span><strong>answer</strong><br>resposta</span><button class="audio" onclick="speak('answer')">▶</button></div>
+        <div class="word"><span><strong>friend</strong><br>amigo(a)</span><button class="audio" onclick="speak('friend')">▶</button></div>
+        <div class="word"><span><strong>music</strong><br>música</span><button class="audio" onclick="speak('music')">▶</button></div>
+        <div class="word"><span><strong>video</strong><br>vídeo</span><button class="audio" onclick="speak('video')">▶</button></div>
+        <div class="word"><span><strong>internet</strong><br>internet</span><button class="audio" onclick="speak('internet')">▶</button></div>
+        <div class="word"><span><strong>school</strong><br>escola</span><button class="audio" onclick="speak('school')">▶</button></div>
+        <div class="word"><span><strong>interview</strong><br>entrevista</span><button class="audio" onclick="speak('interview')">▶</button></div>
+        <div class="word"><span><strong>culture</strong><br>cultura</span><button class="audio" onclick="speak('culture')">▶</button></div>
+        <div class="word"><span><strong>language</strong><br>língua / linguagem</span><button class="audio" onclick="speak('language')">▶</button></div>
+        <div class="word"><span><strong>world</strong><br>mundo</span><button class="audio" onclick="speak('world')">▶</button></div>
+        <div class="word"><span><strong>image</strong><br>imagem</span><button class="audio" onclick="speak('image')">▶</button></div>
+        <div class="word"><span><strong>paragraph</strong><br>parágrafo</span><button class="audio" onclick="speak('paragraph')">▶</button></div>
+        <div class="word"><span><strong>topic</strong><br>tópico / tema</span><button class="audio" onclick="speak('topic')">▶</button></div>
+        <div class="word"><span><strong>purpose</strong><br>finalidade</span><button class="audio" onclick="speak('purpose')">▶</button></div>
+        <div class="word"><span><strong>listen</strong><br>ouvir</span><button class="audio" onclick="speak('listen')">▶</button></div>
+        <div class="word"><span><strong>repeat</strong><br>repetir</span><button class="audio" onclick="speak('repeat')">▶</button></div>
       </div>
     </section>
 
-    <p class="footer">
-      Língua Inglesa – 7º Ano | 2º Trimestre – 2026
-    </p>
+    <section>
+      <h2>💬 20 chunks / expressões importantes</h2>
+      <p>Essas expressões ajudam você a participar, pedir ajuda, opinar e interagir em inglês.</p>
+      <div class="vocab-grid">
+        <div class="word"><span><strong>I think…</strong><br>Eu acho…</span><button class="audio" onclick="speak('I think')">▶</button></div>
+        <div class="word"><span><strong>What about you?</strong><br>E você?</span><button class="audio" onclick="speak('What about you')">▶</button></div>
+        <div class="word"><span><strong>I agree.</strong><br>Eu concordo.</span><button class="audio" onclick="speak('I agree')">▶</button></div>
+        <div class="word"><span><strong>I disagree.</strong><br>Eu discordo.</span><button class="audio" onclick="speak('I disagree')">▶</button></div>
+        <div class="word"><span><strong>Can you help me?</strong><br>Você pode me ajudar?</span><button class="audio" onclick="speak('Can you help me')">▶</button></div>
+        <div class="word"><span><strong>I don't know.</strong><br>Eu não sei.</span><button class="audio" onclick="speak("I don't know")">▶</button></div>
+        <div class="word"><span><strong>Repeat, please.</strong><br>Repita, por favor.</span><button class="audio" onclick="speak('Repeat please')">▶</button></div>
+        <div class="word"><span><strong>I like…</strong><br>Eu gosto de…</span><button class="audio" onclick="speak('I like')">▶</button></div>
+        <div class="word"><span><strong>I don't like…</strong><br>Eu não gosto de…</span><button class="audio" onclick="speak("I don't like")">▶</button></div>
+        <div class="word"><span><strong>Very good!</strong><br>Muito bom!</span><button class="audio" onclick="speak('Very good')">▶</button></div>
+        <div class="word"><span><strong>What does it mean?</strong><br>O que isso significa?</span><button class="audio" onclick="speak('What does it mean')">▶</button></div>
+        <div class="word"><span><strong>Can I try?</strong><br>Posso tentar?</span><button class="audio" onclick="speak('Can I try')">▶</button></div>
+        <div class="word"><span><strong>My answer is…</strong><br>Minha resposta é…</span><button class="audio" onclick="speak('My answer is')">▶</button></div>
+        <div class="word"><span><strong>The main idea is…</strong><br>A ideia principal é…</span><button class="audio" onclick="speak('The main idea is')">▶</button></div>
+        <div class="word"><span><strong>This text is about…</strong><br>Este texto é sobre…</span><button class="audio" onclick="speak('This text is about')">▶</button></div>
+        <div class="word"><span><strong>Let's work together.</strong><br>Vamos trabalhar juntos.</span><button class="audio" onclick="speak("Let's work together")">▶</button></div>
+        <div class="word"><span><strong>It's my turn.</strong><br>É minha vez.</span><button class="audio" onclick="speak("It's my turn")">▶</button></div>
+        <div class="word"><span><strong>It's your turn.</strong><br>É sua vez.</span><button class="audio" onclick="speak("It's your turn")">▶</button></div>
+        <div class="word"><span><strong>Let's sing!</strong><br>Vamos cantar!</span><button class="audio" onclick="speak("Let's sing")">▶</button></div>
+        <div class="word"><span><strong>Good job!</strong><br>Bom trabalho!</span><button class="audio" onclick="speak('Good job')">▶</button></div>
+      </div>
+    </section>
 
-  </div>
+    <section>
+      <h2>📌 Como estudar para a AV.1, REC. AV.1 e Prova Paraná</h2>
+      <ul>
+        <li>Revise as palavras e chunks do trimestre.</li>
+        <li>Leia os textos e atividades do caderno.</li>
+        <li>Pratique interpretação de imagens, memes, vídeos e pequenos textos.</li>
+        <li>Revise polissemia, pronomes objeto e organização textual.</li>
+        <li>Treine identificação de tema, finalidade e informações-chave.</li>
+        <li>Use a plataforma Inglês Paraná High para revisar e praticar.</li>
+        <li>Pratique a música “The Lazy Song” com atenção à pronúncia e ao ritmo.</li>
+        <li>Acompanhe os registros e orientações no LRCO.</li>
+      </ul>
+    </section>
+
+    <section class="tips">
+      <h2>⭐ Dicas importantes</h2>
+      <ul>
+        <li>Não tenha medo de errar.</li>
+        <li>Participe das aulas e das atividades em grupo.</li>
+        <li>Use os chunks frequentemente.</li>
+        <li>Repita palavras em voz alta para melhorar a pronúncia.</li>
+        <li>Aprenda com música, ritmo e criatividade.</li>
+        <li>Use o inglês aos poucos, todos os dias.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      Good luck and let’s learn English together!<br>
+      Língua Inglesa – 7º Ano | 2º Trimestre – 2026
+    </div>
+  </main>
 
   <script>
     function speak(text) {
-      if (!('speechSynthesis' in window)) {
-        alert('Seu navegador não suporta áudio automático.');
-        return;
-      }
-
+      if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
-
       const utterance = new SpeechSynthesisUtterance(text);
-
       utterance.lang = 'en-US';
       utterance.rate = 0.85;
-      utterance.pitch = 1;
-
       window.speechSynthesis.speak(utterance);
     }
   </script>
-
 </body>
-
 </html>
