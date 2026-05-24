@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>English Through Music & Media – 7º Ano</title>
-
   <style>
     :root {
       --bg: #f4f7fb;
-      --card: #ffffff;
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --secondary: #10b981;
-      --accent: #f59e0b;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --soft-blue: #dbeafe;
-      --soft-green: #d1fae5;
-      --soft-yellow: #fef3c7;
-      --soft-purple: #ede9fe;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --brand: #174ea6;
+      --brand-dark: #0b2e5f;
+      --brand-2: #0f766e;
+      --accent: #f97316;
+      --soft: #e8f0fe;
+      --soft-2: #ecfdf5;
+      --soft-3: #fff7ed;
+      --line: #d9e2ef;
+      --shadow: 0 18px 45px rgba(23, 32, 51, 0.12);
+      --radius: 22px;
     }
 
     * {
@@ -29,351 +29,980 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: linear-gradient(180deg, #dbeafe 0%, var(--bg) 38%, #ffffff 100%);
+      color: var(--ink);
       line-height: 1.6;
     }
 
+    a {
+      color: var(--brand);
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
     header {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      padding: 52px 0 26px;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #93c5fd 0, transparent 34%),
+        linear-gradient(135deg, #123d7a, #0f766e);
       color: white;
-      padding: 48px 20px;
-      text-align: center;
+      border-radius: 32px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.3rem;
-      line-height: 1.2;
-    }
-
-    header p {
-      margin: 12px auto 0;
-      max-width: 760px;
-      font-size: 1.05rem;
-      opacity: 0.95;
-    }
-
-    main {
-      width: min(1100px, 92%);
-      margin: 28px auto 48px;
-    }
-
-    section {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 26px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      border: 1px solid var(--border);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--primary-dark);
-      font-size: 1.55rem;
-    }
-
-    h3 {
-      color: var(--primary);
-      margin-bottom: 8px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
     }
 
     .tag {
-      display: inline-block;
-      background: var(--soft-blue);
-      color: var(--primary-dark);
-      padding: 7px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
       border-radius: 999px;
-      font-weight: bold;
-      margin-top: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6vw, 4.7rem);
+      line-height: 1;
+      margin: 22px 0 14px;
+      max-width: 900px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      max-width: 820px;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0 0 26px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin: 26px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(23, 32, 51, 0.06);
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.2rem);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: var(--brand-dark);
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+      color: #123d7a;
+      font-size: 1.25rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-top: 0;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
     .card {
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
       padding: 18px;
+      background: #fff;
     }
 
-    .card ul {
-      padding-left: 20px;
-      margin-bottom: 0;
+    .card.soft {
+      background: var(--soft);
+      border-color: #c7dafe;
     }
 
-    .highlight {
-      background: var(--soft-yellow);
-      border-left: 6px solid var(--accent);
+    .card.green {
+      background: var(--soft-2);
+      border-color: #bbf7d0;
     }
 
-    .project {
-      background: linear-gradient(135deg, #eff6ff, #f5f3ff);
-      border-left: 6px solid var(--primary);
+    .card.orange {
+      background: var(--soft-3);
+      border-color: #fed7aa;
+    }
+
+    .icon-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin-bottom: 8px;
+      font-size: 1.06rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 14px 0 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      background: #eef2ff;
+      color: #243c5a;
+      border: 1px solid #dbe4ff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.93rem;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 14px;
       overflow: hidden;
-      border-radius: 12px;
-      font-size: 0.95rem;
+      border-radius: 16px;
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
     }
 
     th {
-      background: var(--primary);
-      color: white;
-      text-align: left;
-      padding: 12px;
+      background: #e8f0fe;
+      color: var(--brand-dark);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
 
-    td {
-      padding: 12px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
+    tr:last-child td {
+      border-bottom: none;
     }
 
-    tr:nth-child(even) td {
-      background: #f9fafb;
-    }
-
-    .word-grid,
-    .chunk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .word-card,
-    .chunk-card {
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .word-card strong,
-    .chunk-card strong {
-      display: block;
-      color: var(--primary-dark);
-      font-size: 1rem;
-    }
-
-    .word-card span,
-    .chunk-card span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    button.audio {
-      border: none;
-      background: var(--primary);
-      color: white;
-      border-radius: 999px;
-      padding: 8px 10px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-
-    button.audio:hover {
-      background: var(--primary-dark);
-    }
-
-    .exam-focus {
-      border-left: 6px solid var(--secondary);
-      background: linear-gradient(135deg, #ecfdf5, #ffffff);
-    }
-
-    .exam-focus ul {
-      padding-left: 22px;
-      margin-bottom: 0;
-    }
-
-    .study-chart {
-      border-left: 6px solid var(--primary);
-    }
-
-    .tips {
-      background: linear-gradient(135deg, #fff7ed, #ffffff);
-      border-left: 6px solid var(--accent);
-    }
-
-    footer {
+    .descriptor-code {
+      display: inline-block;
+      min-width: 54px;
       text-align: center;
-      padding: 28px 20px;
-      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #123d7a;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .lesson {
+      background: #0f766e;
+      color: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      text-align: center;
+      min-height: 68px;
+      line-height: 1.2;
+    }
+
+    .gold-section {
+      background: linear-gradient(180deg, #fff7ed 0%, #ffffff 34%);
+      border: 2px solid #fed7aa;
+    }
+
+    .gold-banner {
+      background: linear-gradient(135deg, #f97316, #facc15);
+      color: #241305;
+      padding: 18px;
+      border-radius: 18px;
+      margin: 18px 0;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18);
+    }
+
+    .study-path {
+      display: grid;
+      gap: 18px;
+      counter-reset: step;
+      margin-top: 20px;
+    }
+
+    .study-step {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 8px 22px rgba(23, 32, 51, 0.05);
+      overflow: hidden;
+    }
+
+    .study-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #123d7a;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .study-step h3 {
+      margin-right: 56px;
+      margin-top: 0;
+    }
+
+    .study-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .study-box {
+      border-radius: 16px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .study-box strong {
+      color: var(--brand-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .example {
+      background: #ecfdf5;
+      border-color: #bbf7d0;
+    }
+
+    .exam-tip {
+      background: #eef2ff;
+      border-color: #dbe4ff;
+    }
+
+    .formula {
+      font-family: "Courier New", Courier, monospace;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 6px 0;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 1.8rem;
+    .mini-quiz {
+      background: #f8fafc;
+      border: 1px dashed #94a3b8;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 18px;
+    }
+
+    .study-chart {
+      margin-top: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .study-chart h4 {
+      margin: 0;
+      padding: 14px 16px;
+      background: #123d7a;
+      color: #ffffff;
+      font-size: 1.05rem;
+    }
+
+    .study-chart p {
+      margin: 0;
+      padding: 12px 16px;
+      background: #f8fafc;
+      color: var(--muted);
+    }
+
+    .study-chart table {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .study-chart code {
+      background: #eef2ff;
+      color: #0b2e5f;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    .vocab-grid,
+    .chunk-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .vocab,
+    .chunk {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .word {
+      font-weight: 800;
+      color: var(--brand-dark);
+      font-size: 1.05rem;
+    }
+
+    .translation {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    button.audio {
+      width: fit-content;
+      border: none;
+      background: #174ea6;
+      color: white;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    button.audio:hover {
+      background: var(--brand-dark);
+    }
+
+    .callout {
+      border-left: 6px solid var(--accent);
+      background: #fff7ed;
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .checklist li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--brand-2);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    footer {
+      padding: 34px 0 54px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid,
+      .grid-2,
+      .timeline,
+      .vocab-grid,
+      .chunk-grid,
+      .study-columns {
+        grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 20px;
+      .hero {
+        padding: 28px;
       }
 
       table {
-        font-size: 0.85rem;
-      }
-
-      th,
-      td {
-        padding: 9px;
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
       }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>English Through Music & Media</h1>
-    <p>Reading, speaking, vocabulary, digital texts and music-based communication</p>
-    <p><strong>7º Ano | 2º Trimestre – 2026</strong></p>
-  </header>
-
-  <main>
-    <section>
-      <h2>Welcome, students!</h2>
+  <header class="container">
+    <div class="hero">
+      <span class="tag">🎵 Língua Inglesa • 7º Ano • 2º Trimestre 2026</span>
+      <h1>English Through Music & Media</h1>
+      <p class="subtitle">Reading, speaking, vocabulary, digital texts and music-based communication.</p>
       <p>
         Neste trimestre, vamos aprender inglês de forma mais comunicativa, criativa e conectada com o mundo real.
+        Você não precisa falar inglês perfeito: precisa participar, tentar, repetir, criar e evoluir.
+        Vamos usar textos, imagens, músicas, vídeos, entrevistas, atividades em grupo e a plataforma Inglês Paraná Teens.
       </p>
-      <p>
-        Você não precisa falar inglês perfeito. Você precisa participar, tentar, repetir, criar e evoluir.
-        Vamos usar textos, imagens, músicas, vídeos, entrevistas, atividades em grupo e a plataforma
-        Inglês Paraná High para desenvolver nossa comunicação.
-      </p>
-      <span class="tag">Participar + tentar + repetir + evoluir</span>
-    </section>
-
-    <section>
-      <h2>Nossa missão no 2º trimestre</h2>
-      <p>Durante esta etapa, vamos usar o inglês para:</p>
-
-      <div class="grid">
-        <div class="card">Entender textos</div>
-        <div class="card">Interpretar imagens</div>
-        <div class="card">Participar de entrevistas</div>
-        <div class="card">Falar com confiança</div>
-        <div class="card">Aprender com música</div>
-        <div class="card">Criar em grupo</div>
+      <div class="hero-grid" aria-label="Resumo do trimestre">
+        <div class="hero-card"><strong>Projeto final</strong>Count on Me Project</div>
+        <div class="hero-card"><strong>Plataforma</strong>Inglês Paraná Teens</div>
+        <div class="hero-card"><strong>Foco</strong>Comunicação e revisão para prova</div>
       </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>👋 Welcome, students!</h2>
+      <p class="lead">
+        Esta página é o seu guia do 2º trimestre. Ela mostra o que vamos estudar, como será a avaliação,
+        quais palavras e expressões ajudam na comunicação e como se preparar melhor para a prova.
+      </p>
+      <ul class="pill-list">
+        <li>Reading</li>
+        <li>Speaking</li>
+        <li>Vocabulary</li>
+        <li>Digital texts</li>
+        <li>Music</li>
+        <li>Interviews</li>
+        <li>Group work</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>O que vamos aprender</h2>
-
+    <section class="section">
+      <h2>🎯 Nossa missão no 2º trimestre</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Reading</h3>
-          <ul>
-            <li>Informações-chave do texto.</li>
-            <li>Assunto e ideia principal.</li>
-            <li>Gêneros digitais.</li>
-            <li>Finalidade de textos.</li>
-            <li>Textos com imagens e recursos visuais.</li>
-          </ul>
+        <div class="card soft">
+          <div class="icon-title">📖 Entender textos</div>
+          <p>Identificar informações-chave, tema, finalidade, palavras importantes e pistas do contexto.</p>
         </div>
-
-        <div class="card">
-          <h3>Language</h3>
-          <ul>
-            <li>Polissemia.</li>
-            <li>Pronomes objeto.</li>
-            <li>Palavras cognatas.</li>
-            <li>Vocabulário em contexto.</li>
-            <li>Chunks comunicativos.</li>
-          </ul>
+        <div class="card green">
+          <div class="icon-title">🖼️ Interpretar imagens</div>
+          <p>Relacionar textos, imagens, vídeos, recursos visuais e gêneros digitais.</p>
         </div>
-
-        <div class="card">
-          <h3>Speaking</h3>
-          <ul>
-            <li>Entrevistas simples.</li>
-            <li>Perguntas e respostas.</li>
-            <li>Interação em pares e grupos.</li>
-            <li>Apresentações curtas.</li>
-            <li>Pronúncia e ritmo com música.</li>
-          </ul>
+        <div class="card orange">
+          <div class="icon-title">🎙️ Participar de entrevistas</div>
+          <p>Fazer perguntas, responder, ouvir colegas e usar inglês em interações simples.</p>
         </div>
-
         <div class="card">
-          <h3>Culture & Media</h3>
-          <ul>
-            <li>A língua inglesa no mundo globalizado.</li>
-            <li>Música e cultura.</li>
-            <li>Vídeos e mídias digitais.</li>
-            <li>Uso responsável de recursos digitais.</li>
-            <li>Expressão criativa em inglês.</li>
-          </ul>
+          <div class="icon-title">🧠 Usar vocabulário em contexto</div>
+          <p>Aprender palavras, chunks e expressões úteis para compreender e se comunicar.</p>
+        </div>
+        <div class="card">
+          <div class="icon-title">🎵 Aprender com música</div>
+          <p>Explorar ritmo, pronúncia, vocabulário, criatividade e comunicação com a música.</p>
+        </div>
+        <div class="card">
+          <div class="icon-title">🤝 Criar em grupo</div>
+          <p>Planejar, colaborar, ensaiar, apresentar e desenvolver confiança para usar o inglês.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Descritores trabalhados</h2>
+    <section class="section">
+      <h2>📚 O que vamos aprender</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="lesson">Reading</div>
+          <div><strong>Leitura e interpretação</strong><br />Informações-chave do texto, assunto, ideia principal, finalidade de textos e textos com imagens.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="lesson">Language</div>
+          <div><strong>Vocabulário e língua</strong><br />Polissemia, pronomes objeto, palavras cognatas, vocabulário em contexto e chunks comunicativos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="lesson">Speaking</div>
+          <div><strong>Oralidade</strong><br />Entrevistas simples, perguntas e respostas, interação em pares e grupos, apresentações curtas, pronúncia e ritmo com música.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="lesson">Media</div>
+          <div><strong>Cultura e mídia</strong><br />A língua inglesa no mundo globalizado, música e cultura, vídeos, mídias digitais, gêneros digitais e uso responsável de recursos digitais.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="lesson">Writing</div>
+          <div><strong>Organização textual</strong><br />Organização de ideias, tópicos, subtópicos, parágrafos, clareza, finalidade e revisão de textos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="lesson">Project</div>
+          <div><strong>Count on Me Project</strong><br />Performance, lip sync, dramatização, vídeo criativo, coreografia ou cartaz temático inspirado na música “Count on Me”.</div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section gold-section">
+      <h2>💎 Percurso de estudo: a mina de ouro da prova</h2>
+      <p class="lead">
+        Esta parte é um guia direto para revisar antes da AV.1, REC. AV.1 e Prova Paraná.
+        Volte aqui antes da prova e leia com atenção: as definições, exemplos e dicas abaixo mostram
+        exatamente o tipo de raciocínio que você precisa usar nas questões.
+      </p>
+      <div class="gold-banner">
+        Estratégia de ouro: não decore palavras soltas. Entenda o contexto, observe pistas no texto,
+        reconheça a função das palavras, identifique o tema e compare informações.
+      </div>
+
+      <div class="study-path">
+        <article class="study-step">
+          <h3>🔑 Informações-chave do texto</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Informações-chave são as ideias mais importantes de um texto ou parágrafo. Elas ajudam a entender
+              sobre quem ou sobre o que o texto fala e quais detalhes realmente importam.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Em um parágrafo sobre uma pessoa, as informações-chave podem ser nome, ação principal,
+              lugar, problema e consequência.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A prova pode perguntar qual informação é central em uma parte do texto. Volte ao parágrafo e procure
+              palavras repetidas, nomes importantes, ações principais e pistas como <em>who</em>, <em>what</em>, <em>where</em> e <em>why</em>.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🧠 Polissemia: uma palavra, vários sentidos</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Polissemia acontece quando uma mesma palavra pode ter mais de um significado, dependendo do contexto.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              A palavra <em>light</em> pode significar “luz” ou “leve”. A frase ajuda a decidir o sentido:
+              <em>Turn on the light</em> é “acenda a luz”; <em>a light bag</em> é “uma bolsa leve”.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              Não traduza a palavra isolada. Leia a frase inteira e observe o tema do texto. Pergunte:
+              “qual sentido combina melhor com esta situação?”
+            </div>
+          </div>
+
+          <div class="study-chart">
+            <h4>Chart 1: Polissemia</h4>
+            <p>Algumas palavras em inglês podem ter mais de um significado. Para entender o sentido correto, observe o contexto da frase.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Word</th>
+                  <th>Meaning 1</th>
+                  <th>Meaning 2</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>right</code></td>
+                  <td>correto</td>
+                  <td>direita</td>
+                  <td><em>You are right.</em> / <em>Turn right.</em></td>
+                </tr>
+                <tr>
+                  <td><code>light</code></td>
+                  <td>luz</td>
+                  <td>leve</td>
+                  <td><em>Turn on the light.</em> / <em>This bag is light.</em></td>
+                </tr>
+                <tr>
+                  <td><code>watch</code></td>
+                  <td>assistir</td>
+                  <td>relógio</td>
+                  <td><em>I watch videos.</em> / <em>I have a watch.</em></td>
+                </tr>
+                <tr>
+                  <td><code>kind</code></td>
+                  <td>gentil</td>
+                  <td>tipo</td>
+                  <td><em>She is kind.</em> / <em>What kind of music do you like?</em></td>
+                </tr>
+                <tr>
+                  <td><code>can</code></td>
+                  <td>poder / conseguir</td>
+                  <td>lata</td>
+                  <td><em>I can help you.</em> / <em>This is a soda can.</em></td>
+                </tr>
+                <tr>
+                  <td><code>date</code></td>
+                  <td>data</td>
+                  <td>encontro</td>
+                  <td><em>What is the date today?</em> / <em>They have a date.</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>👥 Pronomes objeto</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Pronomes objeto substituem pessoas, animais ou coisas que recebem a ação na frase. Eles evitam repetição e deixam o texto mais fluido.
+              <div class="formula">me, you, him, her, it, us, them</div>
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              <em>I like Anna. I like her.</em><br />
+              Aqui, <em>her</em> substitui <em>Anna</em>.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A questão pode perguntar a quem o pronome se refere. Procure o nome mencionado antes do pronome
+              e veja se ele combina com singular/plural e masculino/feminino.
+            </div>
+          </div>
+
+          <div class="study-chart">
+            <h4>Chart 2: Object Pronouns</h4>
+            <p><em>Object pronouns</em> substituem pessoas, animais ou coisas que recebem a ação na frase.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject Pronoun</th>
+                  <th>Object Pronoun</th>
+                  <th>Example</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>I</td>
+                  <td><code>me</code></td>
+                  <td><em>You can count on me.</em></td>
+                  <td>Você pode contar comigo.</td>
+                </tr>
+                <tr>
+                  <td>you</td>
+                  <td><code>you</code></td>
+                  <td><em>I can help you.</em></td>
+                  <td>Eu posso ajudar você.</td>
+                </tr>
+                <tr>
+                  <td>he</td>
+                  <td><code>him</code></td>
+                  <td><em>We know him.</em></td>
+                  <td>Nós conhecemos ele.</td>
+                </tr>
+                <tr>
+                  <td>she</td>
+                  <td><code>her</code></td>
+                  <td><em>I called her.</em></td>
+                  <td>Eu liguei para ela.</td>
+                </tr>
+                <tr>
+                  <td>it</td>
+                  <td><code>it</code></td>
+                  <td><em>I like it.</em></td>
+                  <td>Eu gosto disso.</td>
+                </tr>
+                <tr>
+                  <td>we</td>
+                  <td><code>us</code></td>
+                  <td><em>They helped us.</em></td>
+                  <td>Eles nos ajudaram.</td>
+                </tr>
+                <tr>
+                  <td>they</td>
+                  <td><code>them</code></td>
+                  <td><em>We can count on them.</em></td>
+                  <td>Nós podemos contar com eles/elas.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🌐 Gêneros digitais e fontes confiáveis</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Gêneros digitais são textos que circulam em ambientes virtuais, como posts, comentários, sites,
+              perfis, mensagens, vídeos, podcasts, notícias online e infográficos.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Um post pode informar, convencer, divulgar, opinar ou entreter. Um site confiável costuma ter autor,
+              data, fonte, linguagem clara e informações verificáveis.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A prova pode pedir a finalidade do texto ou se a fonte parece confiável. Observe título, imagem,
+              autor, data, linguagem e objetivo do gênero digital.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🧱 Organização do texto</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Organizar um texto é dividir ideias em partes com sentido. Podemos usar parágrafos, tópicos,
+              subtópicos, título, imagens e sequência lógica.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Em um texto curto, a primeira parte apresenta o tema, a segunda desenvolve as ideias e a última finaliza
+              ou resume a mensagem.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A questão pode perguntar qual trecho apresenta a ideia principal, qual parte complementa a informação
+              ou qual organização deixa o texto mais claro.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🎧 Análise de textos orais</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Textos orais podem aparecer em vídeos, entrevistas, podcasts, filmes, músicas e falas de pessoas.
+              Para compreendê-los, observamos assunto, finalidade, contexto, interlocutores e pistas sonoras ou visuais.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Em uma entrevista, o tom de voz, as expressões faciais e as palavras escolhidas ajudam a entender
+              se a pessoa está feliz, preocupada, surpresa ou discordando.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A prova pode perguntar quem fala, para quem fala, qual é o assunto, qual é a intenção do áudio/vídeo
+              ou que pista ajuda a entender a mensagem.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🎙️ Entrevistas e histórias de vida</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Entrevista é um gênero baseado em perguntas e respostas. Ela serve para conhecer opiniões,
+              experiências, histórias de vida, preferências e informações sobre alguém.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Perguntas úteis: <em>Where are you from?</em>, <em>What do you like?</em>, <em>What is important to you?</em>,
+              <em>Can you tell me about your story?</em>
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A questão pode pedir qual pergunta combina com uma resposta, qual informação foi coletada
+              ou qual atitude mostra respeito durante a interação oral.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>🌎 A língua inglesa no mundo globalizado</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              A língua inglesa é usada em muitos países e contextos: internet, música, filmes, ciência, turismo,
+              jogos, redes sociais e comunicação internacional.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Uma palavra, música, vídeo ou aplicativo em inglês pode circular em diferentes países e conectar pessoas
+              de culturas variadas.
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A questão pode pedir o tema do texto, o papel do inglês na comunicação global ou a relação entre língua,
+              cultura e diferentes formas de interação.
+            </div>
+          </div>
+        </article>
+
+        <article class="study-step">
+          <h3>✍️ Retomada de organização textual</h3>
+          <div class="study-columns">
+            <div class="study-box">
+              <strong>O que é?</strong>
+              Retomar organização textual é revisar se as ideias estão claras, conectadas e em uma ordem que faça sentido.
+            </div>
+            <div class="study-box example">
+              <strong>Exemplo</strong>
+              Antes de entregar um texto, verifique: tem título? As ideias estão em ordem? Há repetição desnecessária?
+              O leitor consegue entender a mensagem?
+            </div>
+            <div class="study-box exam-tip">
+              <strong>Como pode cair?</strong>
+              A questão pode pedir a melhor ordem das frases, a função de uma parte do texto ou como melhorar a clareza
+              de uma produção escrita.
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mini-quiz">
+        <h3>🧪 Mini-revisão antes da prova</h3>
+        <ol>
+          <li>Qual é a informação-chave do parágrafo?</li>
+          <li>A palavra destacada tem qual sentido nesse contexto?</li>
+          <li>O pronome destacado substitui quem ou o quê?</li>
+          <li>Qual é a finalidade do gênero digital apresentado?</li>
+          <li>A fonte parece confiável? Que pista mostra isso?</li>
+          <li>Qual é o assunto ou tema principal do texto?</li>
+          <li>Como as partes do texto estão organizadas?</li>
+          <li>Quem fala, para quem fala e com qual intenção?</li>
+          <li>Que expressão ou chunk ajuda a responder ou participar da interação?</li>
+          <li>Como este conteúdo pode ajudar no projeto e na avaliação do trimestre?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>🧭 Descritores trabalhados</h2>
+      <p class="lead">Missões do trimestre: as habilidades específicas que você vai dominar e treinar ao longo deste trimestre!</p>
       <table>
         <thead>
           <tr>
             <th>Descritor</th>
-            <th>Descrição</th>
+            <th>O que vamos praticar</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>D02</td>
+            <td><span class="descriptor-code">D02</span></td>
             <td>Estabelecer relações entre partes de um texto, identificando repetições ou substituições que contribuem para a continuidade textual.</td>
           </tr>
           <tr>
-            <td>D04</td>
+            <td><span class="descriptor-code">D04</span></td>
             <td>Inferir uma informação implícita em um texto.</td>
           </tr>
           <tr>
-            <td>D05</td>
+            <td><span class="descriptor-code">D05</span></td>
             <td>Interpretar texto com auxílio de material gráfico diverso, como propagandas, quadrinhos, fotos e imagens.</td>
           </tr>
           <tr>
-            <td>D06</td>
+            <td><span class="descriptor-code">D06</span></td>
             <td>Identificar o tema de um texto.</td>
           </tr>
           <tr>
-            <td>D12</td>
+            <td><span class="descriptor-code">D12</span></td>
             <td>Identificar a finalidade de textos de diferentes gêneros.</td>
           </tr>
           <tr>
-            <td>D15</td>
+            <td><span class="descriptor-code">D15</span></td>
             <td>Estabelecer relações lógico-discursivas presentes no texto, marcadas por conjunções, advérbios etc.</td>
           </tr>
           <tr>
-            <td>D18</td>
+            <td><span class="descriptor-code">D18</span></td>
             <td>Reconhecer o efeito de sentido decorrente da escolha de uma determinada palavra ou expressão.</td>
           </tr>
           <tr>
-            <td>D19</td>
+            <td><span class="descriptor-code">D19</span></td>
             <td>Reconhecer o efeito de sentido decorrente da exploração de recursos ortográficos e/ou morfossintáticos.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section>
-      <h2>Como será a avaliação</h2>
-
+    <section class="section">
+      <h2>📝 Como será a avaliação</h2>
       <table>
         <thead>
           <tr>
@@ -389,7 +1018,7 @@
             <td>Interpretação, descritores, vocabulário, polissemia, pronomes objeto, gêneros digitais e leitura crítica.</td>
           </tr>
           <tr>
-            <td>Plataforma Inglês Paraná High</td>
+            <td>Plataforma Inglês Paraná Teens</td>
             <td>2,0</td>
             <td>Prática contínua, autonomia, vocabulary, listening, speaking e contato frequente com o inglês.</td>
           </tr>
@@ -407,45 +1036,46 @@
       </table>
     </section>
 
-    <section class="project">
-      <h2>Trabalho do trimestre</h2>
+    <section class="section">
+      <h2>🎵 Trabalho do trimestre</h2>
       <h3>English Through Music – Count on Me Project</h3>
-
       <p>
         Neste trimestre, nosso trabalho final será uma produção colaborativa inspirada na música
-        <strong>“Count on Me”</strong>, de <strong>Bruno Mars</strong>.
+        <strong>“Count on Me”</strong>, de Bruno Mars.
       </p>
-
-      <p>
-        A proposta valoriza amizade, cooperação, escuta ativa e uso significativo da língua inglesa
-        em situações reais de comunicação.
-      </p>
-
       <p>
         A atividade vai ajudar a desenvolver listening, speaking, vocabulário, ritmo, pronúncia,
-        criatividade, colaboração e confiança para usar o inglês em uma situação divertida e significativa.
+        criatividade, colaboração e confiança para usar o inglês em uma situação divertida e significativa,
+        trabalhando especialmente ideias de amizade, apoio, confiança e colaboração.
       </p>
-
-      <p>Os grupos poderão apresentar:</p>
-
-      <div class="grid">
-        <div class="card">Performance musical</div>
-        <div class="card">Lip sync</div>
-        <div class="card">Dramatização</div>
-        <div class="card">Vídeo criativo</div>
-        <div class="card">Coreografia</div>
-        <div class="card">Cartaz temático</div>
+      <div class="callout">
+        <strong>O foco será participação, criatividade, colaboração e uso do vocabulário estudado — não perfeição.</strong>
+      </div>
+      <div class="grid-2">
+        <div class="card green">
+          <h3>Os grupos poderão apresentar</h3>
+          <ul class="checklist">
+            <li>Performance musical.</li>
+            <li>Lip sync.</li>
+            <li>Dramatização.</li>
+            <li>Vídeo criativo.</li>
+            <li>Coreografia.</li>
+            <li>Cartaz temático.</li>
+          </ul>
+        </div>
+        <div class="card soft">
+          <h3>O que será desenvolvido</h3>
+          <ul>
+            <li>Pronúncia e ritmo.</li>
+            <li>Vocabulário e chunks.</li>
+            <li>Colaboração e criatividade.</li>
+            <li>Confiança para usar inglês.</li>
+            <li>Expressão corporal e comunicação.</li>
+          </ul>
+        </div>
       </div>
 
-      <p>
-        O foco será participação, criatividade, colaboração e uso do vocabulário estudado — não perfeição.
-      </p>
-    </section>
-
-    <section>
-      <h2>Critérios de avaliação do projeto</h2>
-      <p>A atividade terá valor total de 2,0 pontos. Cada rubrica valerá 0,5 ponto.</p>
-
+      <h3>Critérios de avaliação</h3>
       <table>
         <thead>
           <tr>
@@ -463,7 +1093,7 @@
           <tr>
             <td>Uso da língua inglesa</td>
             <td>0,5</td>
-            <td>Uso de vocabulário da música, compreensão da letra, chunks estudados e participação em inglês.</td>
+            <td>Uso de vocabulário da música, compreensão da letra, chunks estudados sobre amizade/apoio e participação em inglês.</td>
           </tr>
           <tr>
             <td>Criatividade e apresentação</td>
@@ -477,11 +1107,8 @@
           </tr>
         </tbody>
       </table>
-    </section>
 
-    <section>
-      <h2>Rubrica simplificada</h2>
-
+      <h3>Rubrica simplificada</h3>
       <table>
         <thead>
           <tr>
@@ -510,250 +1137,189 @@
       </table>
     </section>
 
-    <section>
-      <h2>20 palavras prioritárias</h2>
-      <p>Clique no botão de áudio para ouvir a pronúncia em inglês.</p>
-
-      <div class="word-grid">
-        <div class="word-card"><div><strong>text</strong><span>texto</span></div><button class="audio" onclick="speak('text')">▶</button></div>
-        <div class="word-card"><div><strong>idea</strong><span>ideia</span></div><button class="audio" onclick="speak('idea')">▶</button></div>
-        <div class="word-card"><div><strong>meaning</strong><span>significado</span></div><button class="audio" onclick="speak('meaning')">▶</button></div>
-        <div class="word-card"><div><strong>question</strong><span>pergunta</span></div><button class="audio" onclick="speak('question')">▶</button></div>
-        <div class="word-card"><div><strong>answer</strong><span>resposta</span></div><button class="audio" onclick="speak('answer')">▶</button></div>
-        <div class="word-card"><div><strong>friend</strong><span>amigo(a)</span></div><button class="audio" onclick="speak('friend')">▶</button></div>
-        <div class="word-card"><div><strong>music</strong><span>música</span></div><button class="audio" onclick="speak('music')">▶</button></div>
-        <div class="word-card"><div><strong>video</strong><span>vídeo</span></div><button class="audio" onclick="speak('video')">▶</button></div>
-        <div class="word-card"><div><strong>internet</strong><span>internet</span></div><button class="audio" onclick="speak('internet')">▶</button></div>
-        <div class="word-card"><div><strong>school</strong><span>escola</span></div><button class="audio" onclick="speak('school')">▶</button></div>
-        <div class="word-card"><div><strong>interview</strong><span>entrevista</span></div><button class="audio" onclick="speak('interview')">▶</button></div>
-        <div class="word-card"><div><strong>culture</strong><span>cultura</span></div><button class="audio" onclick="speak('culture')">▶</button></div>
-        <div class="word-card"><div><strong>language</strong><span>língua / linguagem</span></div><button class="audio" onclick="speak('language')">▶</button></div>
-        <div class="word-card"><div><strong>world</strong><span>mundo</span></div><button class="audio" onclick="speak('world')">▶</button></div>
-        <div class="word-card"><div><strong>image</strong><span>imagem</span></div><button class="audio" onclick="speak('image')">▶</button></div>
-        <div class="word-card"><div><strong>paragraph</strong><span>parágrafo</span></div><button class="audio" onclick="speak('paragraph')">▶</button></div>
-        <div class="word-card"><div><strong>topic</strong><span>tópico / tema</span></div><button class="audio" onclick="speak('topic')">▶</button></div>
-        <div class="word-card"><div><strong>purpose</strong><span>finalidade</span></div><button class="audio" onclick="speak('purpose')">▶</button></div>
-        <div class="word-card"><div><strong>listen</strong><span>ouvir</span></div><button class="audio" onclick="speak('listen')">▶</button></div>
-        <div class="word-card"><div><strong>repeat</strong><span>repetir</span></div><button class="audio" onclick="speak('repeat')">▶</button></div>
-      </div>
+    <section class="section">
+      <h2>🔊 20 palavras prioritárias</h2>
+      <p class="lead">Clique no botão de áudio para ouvir a pronúncia em inglês. A página dará preferência a vozes femininas, naturais e menos robotizadas quando elas estiverem disponíveis no aparelho ou navegador.</p>
+      <div class="vocab-grid" id="vocab-list"></div>
     </section>
 
-    <section>
-      <h2>20 chunks / expressões importantes</h2>
-      <p>Essas expressões ajudam você a participar, pedir ajuda, opinar e interagir em inglês.</p>
-
-      <div class="chunk-grid">
-        <div class="chunk-card"><div><strong>I think…</strong><span>Eu acho…</span></div><button class="audio" onclick="speak('I think')">▶</button></div>
-        <div class="chunk-card"><div><strong>What about you?</strong><span>E você?</span></div><button class="audio" onclick="speak('What about you?')">▶</button></div>
-        <div class="chunk-card"><div><strong>I agree.</strong><span>Eu concordo.</span></div><button class="audio" onclick="speak('I agree')">▶</button></div>
-        <div class="chunk-card"><div><strong>I disagree.</strong><span>Eu discordo.</span></div><button class="audio" onclick="speak('I disagree')">▶</button></div>
-        <div class="chunk-card"><div><strong>Can you help me?</strong><span>Você pode me ajudar?</span></div><button class="audio" onclick="speak('Can you help me?')">▶</button></div>
-        <div class="chunk-card"><div><strong>I don't know.</strong><span>Eu não sei.</span></div><button class="audio" onclick="speak(`I don't know`)">▶</button></div>
-        <div class="chunk-card"><div><strong>Repeat, please.</strong><span>Repita, por favor.</span></div><button class="audio" onclick="speak('Repeat, please')">▶</button></div>
-        <div class="chunk-card"><div><strong>I like…</strong><span>Eu gosto de…</span></div><button class="audio" onclick="speak('I like')">▶</button></div>
-        <div class="chunk-card"><div><strong>I don't like…</strong><span>Eu não gosto de…</span></div><button class="audio" onclick="speak(`I don't like`)">▶</button></div>
-        <div class="chunk-card"><div><strong>Very good!</strong><span>Muito bom!</span></div><button class="audio" onclick="speak('Very good')">▶</button></div>
-        <div class="chunk-card"><div><strong>What does it mean?</strong><span>O que isso significa?</span></div><button class="audio" onclick="speak('What does it mean?')">▶</button></div>
-        <div class="chunk-card"><div><strong>Can I try?</strong><span>Posso tentar?</span></div><button class="audio" onclick="speak('Can I try?')">▶</button></div>
-        <div class="chunk-card"><div><strong>My answer is…</strong><span>Minha resposta é…</span></div><button class="audio" onclick="speak('My answer is')">▶</button></div>
-        <div class="chunk-card"><div><strong>The main idea is…</strong><span>A ideia principal é…</span></div><button class="audio" onclick="speak('The main idea is')">▶</button></div>
-        <div class="chunk-card"><div><strong>This text is about…</strong><span>Este texto é sobre…</span></div><button class="audio" onclick="speak('This text is about')">▶</button></div>
-        <div class="chunk-card"><div><strong>Let's work together.</strong><span>Vamos trabalhar juntos.</span></div><button class="audio" onclick="speak(`Let's work together`)">▶</button></div>
-        <div class="chunk-card"><div><strong>It's my turn.</strong><span>É minha vez.</span></div><button class="audio" onclick="speak(`It's my turn`)">▶</button></div>
-        <div class="chunk-card"><div><strong>It's your turn.</strong><span>É sua vez.</span></div><button class="audio" onclick="speak(`It's your turn`)">▶</button></div>
-        <div class="chunk-card"><div><strong>Let's sing!</strong><span>Vamos cantar!</span></div><button class="audio" onclick="speak(`Let's sing`)">▶</button></div>
-        <div class="chunk-card"><div><strong>Good job!</strong><span>Bom trabalho!</span></div><button class="audio" onclick="speak('Good job')">▶</button></div>
-      </div>
+    <section class="section">
+      <h2>💬 20 chunks / expressões importantes</h2>
+      <p class="lead">Essas expressões ajudam você a participar, pedir ajuda, opinar e interagir em inglês. A oralização também tentará priorizar vozes femininas e naturais.</p>
+      <div class="chunk-grid" id="chunk-list"></div>
     </section>
 
-    <section class="exam-focus">
-      <h2>O que pode cair na prova?</h2>
-
-      <ul>
-        <li>Identificar o assunto ou tema principal de um texto.</li>
-        <li>Encontrar informações importantes em parágrafos.</li>
-        <li>Inferir o significado de palavras pelo contexto.</li>
-        <li>Reconhecer palavras com mais de um sentido: polissemia.</li>
-        <li>Usar corretamente os pronomes objeto: <strong>me, you, him, her, it, us, them</strong>.</li>
-        <li>Identificar a finalidade de textos digitais, orais e escritos.</li>
-        <li>Organizar ideias em tópicos, parágrafos e pequenos textos.</li>
-        <li>Interpretar imagens, vídeos, músicas, posts e outros gêneros multimodais.</li>
-        <li>Responder e criar perguntas simples para entrevistas.</li>
-      </ul>
-    </section>
-
-    <section class="study-chart">
-      <h2>Chart 1: Polissemia</h2>
-
-      <p>
-        Algumas palavras em inglês podem ter mais de um significado. Para entender o sentido correto,
-        observe o contexto da frase.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Word</th>
-            <th>Meaning 1</th>
-            <th>Meaning 2</th>
-            <th>Examples</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>right</td>
-            <td>correto</td>
-            <td>direita</td>
-            <td>You are right. / Turn right.</td>
-          </tr>
-          <tr>
-            <td>light</td>
-            <td>luz</td>
-            <td>leve</td>
-            <td>Turn on the light. / This bag is light.</td>
-          </tr>
-          <tr>
-            <td>watch</td>
-            <td>assistir</td>
-            <td>relógio</td>
-            <td>I watch videos. / I have a watch.</td>
-          </tr>
-          <tr>
-            <td>kind</td>
-            <td>gentil</td>
-            <td>tipo</td>
-            <td>She is kind. / What kind of music do you like?</td>
-          </tr>
-          <tr>
-            <td>can</td>
-            <td>poder / conseguir</td>
-            <td>lata</td>
-            <td>I can help you. / This is a soda can.</td>
-          </tr>
-          <tr>
-            <td>date</td>
-            <td>data</td>
-            <td>encontro</td>
-            <td>What is the date today? / They have a date.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="study-chart">
-      <h2>Chart 2: Object Pronouns</h2>
-
-      <p>
-        <strong>Object pronouns</strong> substituem pessoas, animais ou coisas que recebem a ação na frase.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Subject Pronoun</th>
-            <th>Object Pronoun</th>
-            <th>Example</th>
-            <th>Meaning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>I</td>
-            <td>me</td>
-            <td>You can count on me.</td>
-            <td>Você pode contar comigo.</td>
-          </tr>
-          <tr>
-            <td>you</td>
-            <td>you</td>
-            <td>I can help you.</td>
-            <td>Eu posso ajudar você.</td>
-          </tr>
-          <tr>
-            <td>he</td>
-            <td>him</td>
-            <td>We know him.</td>
-            <td>Nós conhecemos ele.</td>
-          </tr>
-          <tr>
-            <td>she</td>
-            <td>her</td>
-            <td>I called her.</td>
-            <td>Eu liguei para ela.</td>
-          </tr>
-          <tr>
-            <td>it</td>
-            <td>it</td>
-            <td>I like it.</td>
-            <td>Eu gosto disso.</td>
-          </tr>
-          <tr>
-            <td>we</td>
-            <td>us</td>
-            <td>They helped us.</td>
-            <td>Eles nos ajudaram.</td>
-          </tr>
-          <tr>
-            <td>they</td>
-            <td>them</td>
-            <td>We can count on them.</td>
-            <td>Nós podemos contar com eles/elas.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="highlight">
-      <h2>Como estudar para a AV.1, REC. AV.1 e Prova Paraná</h2>
-
-      <ul>
+    <section class="section">
+      <h2>📌 Como estudar para a AV.1, REC. AV.1 e Prova Paraná</h2>
+      <ul class="checklist">
         <li>Revise as palavras e chunks do trimestre.</li>
         <li>Leia os textos e atividades do caderno.</li>
+        <li>Volte à seção “Mina de ouro da prova” e revise cada bloco: definição, exemplo e como pode cair.</li>
         <li>Pratique interpretação de imagens, memes, vídeos e pequenos textos.</li>
         <li>Revise polissemia, pronomes objeto e organização textual.</li>
         <li>Treine identificação de tema, finalidade e informações-chave.</li>
-        <li>Use a plataforma Inglês Paraná High para revisar e praticar.</li>
-        <li>Pratique a música “Count on Me” com atenção à pronúncia, ao ritmo e à mensagem principal.</li>
+        <li>Use a plataforma Inglês Paraná Teens para revisar e praticar.</li>
+        <li>Pratique a música “Count on Me” com atenção à pronúncia, ao ritmo e ao sentido das expressões de amizade e apoio.</li>
         <li>Acompanhe os registros e orientações no LRCO.</li>
       </ul>
     </section>
 
-    <section class="tips">
+    <section class="section">
       <h2>⭐ Dicas importantes</h2>
-
-      <ul>
-        <li>Não tenha medo de errar.</li>
-        <li>Participe das aulas e das atividades em grupo.</li>
-        <li>Use os chunks frequentemente.</li>
-        <li>Repita palavras em voz alta para melhorar a pronúncia.</li>
-        <li>Aprenda com música, ritmo e criatividade.</li>
-        <li>Use o inglês aos poucos, todos os dias.</li>
-      </ul>
-
-      <p><strong>Good luck and let’s learn English together!</strong></p>
+      <div class="grid">
+        <div class="card soft"><strong>Não tenha medo de errar.</strong><br />Errar faz parte do processo de aprender inglês.</div>
+        <div class="card green"><strong>Participe das aulas.</strong><br />Quanto mais você participa, mais confiança desenvolve.</div>
+        <div class="card orange"><strong>Use os chunks.</strong><br />Eles ajudam você a falar e responder com mais segurança.</div>
+        <div class="card"><strong>Repita em voz alta.</strong><br />A repetição melhora pronúncia, memória e ritmo.</div>
+        <div class="card"><strong>Aprenda com música.</strong><br />Música ajuda a memorizar palavras, sons e expressões.</div>
+        <div class="card"><strong>Use inglês aos poucos.</strong><br />Pequenos usos todos os dias fazem diferença.</div>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="container">
+    <strong>Good luck and let’s learn English together!</strong><br />
     Língua Inglesa – 7º Ano | 2º Trimestre – 2026
   </footer>
 
   <script>
-    function speak(text) {
-      if (!("speechSynthesis" in window)) {
-        alert("Seu navegador não oferece suporte ao recurso de áudio.");
-        return;
-      }
+    const vocabulary = [
+      ["text", "texto"],
+      ["idea", "ideia"],
+      ["meaning", "significado"],
+      ["question", "pergunta"],
+      ["answer", "resposta"],
+      ["friend", "amigo(a)"],
+      ["music", "música"],
+      ["video", "vídeo"],
+      ["internet", "internet"],
+      ["school", "escola"],
+      ["interview", "entrevista"],
+      ["culture", "cultura"],
+      ["language", "língua / linguagem"],
+      ["world", "mundo"],
+      ["image", "imagem"],
+      ["paragraph", "parágrafo"],
+      ["topic", "tópico / tema"],
+      ["purpose", "finalidade"],
+      ["listen", "ouvir"],
+      ["repeat", "repetir"]
+    ];
 
+    const chunks = [
+      ["I think…", "Eu acho…"],
+      ["What about you?", "E você?"],
+      ["I agree.", "Eu concordo."],
+      ["I disagree.", "Eu discordo."],
+      ["Can you help me?", "Você pode me ajudar?"],
+      ["I don't know.", "Eu não sei."],
+      ["Repeat, please.", "Repita, por favor."],
+      ["I like…", "Eu gosto de…"],
+      ["I don't like…", "Eu não gosto de…"],
+      ["Very good!", "Muito bom!"],
+      ["What does it mean?", "O que isso significa?"],
+      ["Can I try?", "Posso tentar?"],
+      ["My answer is…", "Minha resposta é…"],
+      ["The main idea is…", "A ideia principal é…"],
+      ["This text is about…", "Este texto é sobre…"],
+      ["Let's work together.", "Vamos trabalhar juntos."],
+      ["It's my turn.", "É minha vez."],
+      ["It's your turn.", "É sua vez."],
+      ["Let's sing!", "Vamos cantar!"],
+      ["Good job!", "Bom trabalho!"]
+    ];
+
+    let availableVoices = [];
+
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      availableVoices = window.speechSynthesis.getVoices();
+    }
+
+    loadVoices();
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function pickPreferredEnglishVoice() {
+      if (!availableVoices.length) loadVoices();
+
+      const femaleVoiceNames = [
+        'aria', 'jenny', 'samantha', 'susan', 'zira', 'ava', 'emma', 'olivia', 'sara',
+        'sonia', 'libby', 'mia', 'joanna', 'kendra', 'kimberly', 'salli', 'amy',
+        'nicole', 'raveena', 'victoria', 'karen', 'serena', 'moira', 'fiona', 'tessa'
+      ];
+
+      const naturalVoiceTokens = [
+        'natural', 'online', 'neural', 'premium', 'enhanced', 'google', 'microsoft'
+      ];
+
+      const lessPreferredVoiceTokens = [
+        'male', 'david', 'mark', 'daniel', 'fred', 'alex', 'tom', 'robot', 'compact'
+      ];
+
+      const englishVoices = availableVoices.filter((voice) =>
+        voice.lang && voice.lang.toLowerCase().startsWith('en')
+      );
+
+      const candidates = englishVoices.length ? englishVoices : availableVoices;
+
+      return candidates
+        .map((voice) => {
+          const name = voice.name.toLowerCase();
+          const lang = voice.lang.toLowerCase();
+          let score = 0;
+
+          if (lang === 'en-us') score += 20;
+          else if (lang === 'en-gb') score += 18;
+          else if (lang === 'en-ca' || lang === 'en-au') score += 16;
+          else if (lang.startsWith('en')) score += 12;
+
+          if (femaleVoiceNames.some((token) => name.includes(token))) score += 30;
+          if (naturalVoiceTokens.some((token) => name.includes(token))) score += 12;
+          if (lessPreferredVoiceTokens.some((token) => name.includes(token))) score -= 25;
+
+          return { voice, score };
+        })
+        .sort((a, b) => b.score - a.score)[0]?.voice || null;
+    }
+
+    function speak(text) {
+      if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
 
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "en-US";
-      utterance.rate = 0.85;
-      utterance.pitch = 1;
+      const preferredVoice = pickPreferredEnglishVoice();
+
+      utterance.lang = preferredVoice?.lang || 'en-US';
+      if (preferredVoice) utterance.voice = preferredVoice;
+
+      utterance.rate = 0.80;
+      utterance.pitch = 1.04;
+      utterance.volume = 1;
 
       window.speechSynthesis.speak(utterance);
     }
+
+    function createAudioCard([english, portuguese], type) {
+      const card = document.createElement('article');
+      card.className = type;
+      card.innerHTML = `
+        <div>
+          <div class="word">${english}</div>
+          <div class="translation">${portuguese}</div>
+        </div>
+        <button class="audio" type="button" aria-label="Ouvir pronúncia de ${english}">▶ ouvir</button>
+      `;
+      card.querySelector('button').addEventListener('click', () => speak(english));
+      return card;
+    }
+
+    const vocabList = document.getElementById('vocab-list');
+    vocabulary.forEach(item => vocabList.appendChild(createAudioCard(item, 'vocab')));
+
+    const chunkList = document.getElementById('chunk-list');
+    chunks.forEach(item => chunkList.appendChild(createAudioCard(item, 'chunk')));
   </script>
 </body>
 </html>
